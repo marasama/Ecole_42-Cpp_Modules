@@ -6,7 +6,7 @@
 /*   By: adurusoy <adurusoy@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 15:56:45 by adurusoy          #+#    #+#             */
-/*   Updated: 2024/02/02 16:24:49 by adurusoy         ###   ########.fr       */
+/*   Updated: 2024/02/02 17:14:29 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class contact
 		std::string phoneNum;
 		std::string darkSecret;
 	public:
-		contact createContact(void);
+		void createContact(void);
 };
 
 class phonebook
@@ -32,7 +32,7 @@ class phonebook
 	private:
 		contact contacts[8];
 	public:
-		void addContact(void);
+		void addContact(short &a);
 
 };
 

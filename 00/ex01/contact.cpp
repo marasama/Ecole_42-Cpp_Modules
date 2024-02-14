@@ -6,7 +6,7 @@
 /*   By: adurusoy <adurusoy@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 15:52:09 by adurusoy          #+#    #+#             */
-/*   Updated: 2024/02/02 18:59:03 by adurusoy         ###   ########.fr       */
+/*   Updated: 2024/02/13 18:07:56 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,27 +32,45 @@ void contact::printContact(void)
 {
 	short a = 0;
 	std::cout << "|" << index + 1 << "\t   |";
-	while (a < 10 && firstName[a])
+	while (a < 9 && firstName[a])
 		std::cout <<  firstName[a++];
-	if (a == 10)
+	if (a == 9)
 		std::cout << ".";
 	else
-		std::cout << "\t";
+	{
+		while (a != 10)
+		{
+			std::cout << " ";
+			a++;
+		}
+	}
 	std::cout << "|";
 	a = 0;
-	while (a < 10 && lastName[a])
+	while (a < 9 && lastName[a])
 		std::cout <<  lastName[a++];
-	if (a == 10)
+	if (a == 9)
 		std::cout << ".";
 	else
-		std::cout << "\t ";
+	{
+		while (a != 10)
+		{
+			std::cout << " ";
+			a++;
+		}
+	}
 	std::cout << "|";
 	a = 0;
-	while (a < 10 && nickName[a])
+	while (a < 9 && nickName[a])
 		std::cout <<  nickName[a++];
-	if (a == 10)
+	if (a == 9)
 		std::cout << ".";
 	else
-		std::cout << "\t ";
+	{
+		while (a != 10)
+		{
+			std::cout << " ";
+			a++;
+		}
+	}
 	std::cout << "|" << std::endl;
 };

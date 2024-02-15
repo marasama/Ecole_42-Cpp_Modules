@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adurusoy <adurusoy@42.fr>                  +#+  +:+       +#+        */
+/*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 00:38:57 by adurusoy          #+#    #+#             */
-/*   Updated: 2024/01/29 18:14:54 by adurusoy         ###   ########.fr       */
+/*   Updated: 2024/02/15 03:43:41 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-
-using namespace std;
 
 int main(int argc, char **argv)
 {
@@ -21,7 +19,7 @@ int main(int argc, char **argv)
 
 	if(argc < 2)
 	{
-		cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << endl;
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 		return(0);
 	}
 	while (i < argc)
@@ -30,14 +28,14 @@ int main(int argc, char **argv)
 		while (argv[i][j] != '\0')
 		{
 			if (argv[i][j] < 123 && argv[i][j] > 96)
-				cout << (char)(argv[i][j] - 32);
+				std::cout << (char)(argv[i][j] - 32);
 			else
-				cout << argv[i][j];
+				std::cout << argv[i][j];
 			j++;
 		}
-		cout << ' ';
+		std::cout << ' ';
 		i++;
 	}
-	cout << endl;
+	std::cout << std::endl;
 	return (0);
 }

@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: adurusoy <adurusoy@42.fr>                  +#+  +:+       +#+         #
+#    By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/29 18:04:04 by adurusoy          #+#    #+#              #
-#    Updated: 2024/02/02 16:17:34 by adurusoy         ###   ########.fr        #
+#    Updated: 2024/02/15 03:27:48 by adurusoy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
-SRC = phonebook.cpp main.cpp contact.cpp phonebook.hpp
+NAME = Book
+SRC = PhoneBook.cpp Book.cpp Contact.cpp
 CC = g++
 RM = rm -rf
 CCFLAGS = -Wall -Wextra -Werror -std=c++98

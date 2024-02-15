@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/02 15:56:45 by adurusoy          #+#    #+#             */
-/*   Updated: 2024/02/15 03:40:24 by adurusoy         ###   ########.fr       */
+/*   Created: 2024/02/15 03:36:26 by adurusoy          #+#    #+#             */
+/*   Updated: 2024/02/15 03:37:33 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef CONTACT_H
+# define CONTACT_H
 
 # include <iostream>
-# include "Contact.hpp"
 
-class PhoneBook
+class Contact
 {
 	private:
-		Contact contacts[8];
+		std::string	firstName;
+		std::string	lastName;
+		std::string	nickName;
+		std::string	phoneNum;
+		std::string	darkSecret;
+		short		index;
 	public:
-		PhoneBook(int a)
-		{
-			index = a;
-		}
-		int index;
-		void addContact(void);
-		void searchContact(short size);
-		void chooseContact(std::string index, short size);
+		void createContact(short a);
+		void printContact(void);
+		void printFullContact(void);
 };
 
 #endif

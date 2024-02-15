@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: adurusoy <adurusoy@42.fr>                  +#+  +:+       +#+         #
+#    By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/29 18:04:04 by adurusoy          #+#    #+#              #
-#    Updated: 2024/01/29 18:13:08 by adurusoy         ###   ########.fr        #
+#    Updated: 2024/02/15 03:44:25 by adurusoy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
-SRC = megaphone.cpp
+NAME = Megaphone
+SRC = Megaphone.cpp
 CC = g++
 RM = rm -rf
 CCFLAGS = -Wall -Wextra -Werror -std=c++98

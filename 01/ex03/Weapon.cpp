@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   weapon.cpp                                         :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: adurusoy <adurusoy@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 09:48:25 by adurusoy          #+#    #+#             */
-/*   Updated: 2024/02/15 10:43:18 by adurusoy         ###   ########.fr       */
+/*   Updated: 2024/02/16 17:24:31 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,5 @@ void Weapon::setType(std::string newType)
 
 const std::string &Weapon::getType(void)
 {
-	std::string &a = type;
-	return(a);
+	return(type);
 }

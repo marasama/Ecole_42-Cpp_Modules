@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: adurusoy <adurusoy@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 09:11:27 by adurusoy          #+#    #+#             */
-/*   Updated: 2024/02/15 10:42:49 by adurusoy         ###   ########.fr       */
+/*   Updated: 2024/02/16 17:14:06 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ class Weapon
 	private:
 		std::string type;
 	public:
+		Weapon(std::string weap);
 		const std::string &getType(void);
 		void setType(std::string newType);
-		Weapon(std::string weap);
 };
 
 #endif

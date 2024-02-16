@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+         #
+#    By: adurusoy <adurusoy@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/29 18:04:04 by adurusoy          #+#    #+#              #
-#    Updated: 2024/02/15 09:05:12 by adurusoy         ###   ########.fr        #
+#    Updated: 2024/02/16 17:13:00 by adurusoy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = example
-SRC = main.cpp
+NAME = violence
+SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 CC = g++
 RM = rm -rf
 CCFLAGS = -Wall -Wextra -Werror -std=c++98

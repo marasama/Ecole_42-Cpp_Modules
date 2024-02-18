@@ -12,7 +12,7 @@
 
 NAME = RePlacer
 SRC = main.cpp
-CC = g++
+CC = c++
 RM = rm -rf
 CCFLAGS = -Wall -Wextra -Werror -std=c++98
 

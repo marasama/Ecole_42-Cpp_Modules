@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adurusoy <adurusoy@42.fr>                  +#+  +:+       +#+        */
+/*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:38:13 by adurusoy          #+#    #+#             */
-/*   Updated: 2024/02/16 17:28:57 by adurusoy         ###   ########.fr       */
+/*   Updated: 2024/02/20 15:00:40 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,14 @@ void HumanA::attack(void)
 HumanA::HumanA(std::string name, Weapon &weap) : weap(weap)
 {
 	this->name = name;
-	this->weap = weap;
 }
 
 void HumanA::setWeapon(Weapon weap)
 {
 	this->weap = weap;
+}
+
+void HumanA::setName(std::string name)
+{
+    this->name = name;
 }

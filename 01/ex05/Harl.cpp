@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adurusoy <adurusoy@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 14:46:38 by adurusoy          #+#    #+#             */
-/*   Updated: 2024/02/18 14:46:38 by adurusoy         ###   ########.fr       */
+/*   Updated: 2024/02/20 16:15:11 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,20 @@ void Harl::error(void)
 
 void Harl::complain(std::string str)
 {
-    t_func funcs[] {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+    t_func funcs[] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
     std::string levels[] = { "DEBUG", "INFO", "WARNING", "ERROR"};
-    for (int i = 0; i < 4 && levels[i].compare(level); i++);
-    if (i < 4)
-        (*funcs[i])();
-    else
-        std::cout << "Please enter a correct parameter" << std::endl;
+    int i = 0;
+    while (i < 4 && levels[i].compare(str))
+        i++;
+    switch (i)
+    {
+        case    0:
+        case    1:
+        case    2:
+        case    3:
+            (this->*funcs[i])();
+            break ;
+        default:
+            std::cout << "Please enter a correct parameter" << std::endl;
+    }
 }

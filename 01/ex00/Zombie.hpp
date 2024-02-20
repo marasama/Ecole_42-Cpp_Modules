@@ -6,7 +6,7 @@
 /*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 04:14:32 by adurusoy          #+#    #+#             */
-/*   Updated: 2024/02/15 08:34:25 by adurusoy         ###   ########.fr       */
+/*   Updated: 2024/02/20 14:19:30 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,8 @@ class Zombie
 		Zombie(std::string str);
 		~Zombie(void);
 };
+
+void	randomChump(std::string name);
+Zombie* newZombie(std::string name);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adurusoy <adurusoy@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 14:51:20 by adurusoy          #+#    #+#             */
-/*   Updated: 2024/02/18 14:51:20 by adurusoy         ###   ########.fr       */
+/*   Updated: 2024/02/20 15:25:02 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,11 @@ int main( void )
     std::string input;
     Harl        harl;
 
-    std::cin >> input;
-    while (input.compare("exit"))
+    do
     {
         std::cout << "Enter a level: ";
         std::cin >> input;
         harl.complain(input);
-    }
-    return 1;
+    } while (input.compare("exit"));
+    return (0);
 }

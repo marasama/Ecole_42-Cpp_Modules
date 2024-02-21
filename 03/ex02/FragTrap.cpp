@@ -3,34 +3,54 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-khni <ael-khni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 13:21:00 by ael-khni          #+#    #+#             */
-/*   Updated: 2022/07/24 13:31:38 by ael-khni         ###   ########.fr       */
+/*   Created: 2024/02/21 18:10:46 by adurusoy          #+#    #+#             */
+/*   Updated: 2024/02/21 18:39:58 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap( std::string name ) : ClapTrap(name)
+FragTrap::FragTrap()
 {
-    this->_hitPoints = 100;
-    this->_energyPoints = 100;
-    this->_attackDamage = 30;
+	std::cout << "|FragTrap: " << "<none>" << "| is created!" << std::endl;
+	this->_name = "<none>";
+	this->_attackDamage = 30;
+	this->_energyPoints = 100;
+	this->_hitPoints = 100;
+}
 
-    std::cout << "| FragTrap | - " << this->_name << " constructed." << std::endl;
+FragTrap::FragTrap(const std::string name) : ClapTrap(name)
+{
+	std::cout << "|FragTrap: " << name << "| is created!" << std::endl;
+	this->_name = name;
+	this->_attackDamage = 30;
+	this->_energyPoints = 100;
+	this->_hitPoints = 100;
+}
+
+FragTrap::FragTrap(const FragTrap& otherFrag)
+{
+	std::cout << "|FragTrap: " << this->_name << "| copy constructor called!" << std::endl;
+	*this = otherFrag;
 }
 
 FragTrap::~FragTrap()
 {
-    std::cout << "| FragTrap | - " << this->_name << " destructed." << std::endl;
+	std::cout << "|FragTrap: " << this->_name << "| destructor called!" << std::endl;
 }
 
-void    FragTrap::highFive( void ) {
-    if ( this->_energyPoints <= 0 ) {
-        std::cout << "| FragTrap | - " << this->_name << " is out of energy." << std::endl;
-        return;
-    }
-    std::cout << "| FragTrap | - " << this->_name << " high fives everybody." << std::endl;
-    this->_energyPoints -= 1;
+FragTrap &FragTrap::operator=(const FragTrap& otherFrag)
+{
+	this->_name = otherFrag._name;
+	this->_attackDamage = otherFrag._attackDamage;
+	this->_energyPoints = otherFrag._energyPoints;
+	this->_hitPoints = otherFrag._hitPoints;
+	return (*this);
+}
+
+void FragTrap::highFiveGuys(void)
+{
+	std::cout << "|FragTrap: " << this->_name << "| Let's make high fives and be happy!" << std::endl;
 }

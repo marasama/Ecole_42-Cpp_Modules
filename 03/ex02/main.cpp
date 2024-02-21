@@ -3,24 +3,55 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-khni <ael-khni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 18:44:56 by ael-khni          #+#    #+#             */
-/*   Updated: 2022/07/24 13:31:10 by ael-khni         ###   ########.fr       */
+/*   Created: 2024/02/21 13:06:31 by adurusoy          #+#    #+#             */
+/*   Updated: 2024/02/21 18:37:01 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include <iostream>
 
-int main( void )
+int main()
 {
-    FragTrap ash( "Ash" );
-    FragTrap ash2( ash );
+	std::string name;
 
-    ash.attack( "the air" );
-    ash.takeDamage( 10 );
-    ash.beRepaired( 10 );
-    ash.highFive();
+	std::cout << "Please enter name for Clap: ";
+	std::cin >> name;
+	ClapTrap clap(name);
 
-    return EXIT_SUCCESS;
+	std::cout << "Please enter name for Scav: ";
+	std::cin >> name;
+	ScavTrap scav(name);
+
+	std::cout << "Please enter name for Frag: ";
+	std::cin >> name;
+	FragTrap frag(name);
+	std::cout << "-----ClapTrap-----" << std::endl;
+	for(int i = 0; i < 2; i++)
+		clap.attack("orc");
+	clap.takeDamage(9);
+	clap.beRepaired(24);
+	clap.takeDamage(1);
+	clap.beRepaired(1);
+	std::cout << "-----ScavTrap-----" << std::endl;
+	for(int i = 0; i < 4; i++)
+		scav.attack("troll");
+	scav.takeDamage(11);
+	scav.beRepaired(45);
+	scav.takeDamage(1);
+	scav.beRepaired(1);
+	scav.guardGate();
+	std::cout << "-----FragTrap-----" << std::endl;
+	for(int i = 0; i < 8; i++)
+		frag.attack("fairy");
+	frag.takeDamage(11);
+	frag.beRepaired(95);
+	frag.takeDamage(2);
+	frag.beRepaired(6);
+	frag.highFiveGuys();
+    return (0);
 }

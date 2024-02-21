@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-khni <ael-khni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 18:44:56 by ael-khni          #+#    #+#             */
-/*   Updated: 2022/07/23 19:44:31 by ael-khni         ###   ########.fr       */
+/*   Created: 2024/02/21 13:06:31 by adurusoy          #+#    #+#             */
+/*   Updated: 2024/02/21 18:08:32 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@
 int main( void )
 {
     ClapTrap clap("Ash");
-
-    clap.attack("Staff");
-
-
-    return EXIT_SUCCESS;
+    clap.attack("enemy");
+    clap.takeDamage(10);
+    clap.beRepaired(2);
+    return (0);
 }

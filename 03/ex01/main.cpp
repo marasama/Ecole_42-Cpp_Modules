@@ -3,24 +3,44 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-khni <ael-khni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 18:44:56 by ael-khni          #+#    #+#             */
-/*   Updated: 2022/07/24 12:23:33 by ael-khni         ###   ########.fr       */
+/*   Created: 2024/02/21 13:06:31 by adurusoy          #+#    #+#             */
+/*   Updated: 2024/02/21 18:45:38 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ClapTrap.hpp"
+
 #include "ScavTrap.hpp"
+#include <iostream>
 
-int main( void )
+int main()
 {
-    ScavTrap ash( "Ash" );
-    ScavTrap ash2( ash );
+	std::string name;
 
-    ash.attack( "the air" );
-    ash.takeDamage( 10 );
-    ash.beRepaired( 10 );
-    ash.guardGate();
+	std::cout << "Please enter for Clap: ";
+	std::cin >> name;
+	ClapTrap clap(name);
 
-    return EXIT_SUCCESS;
+	std::cout << "Please enter for Scav: ";
+	std::cin >> name;
+	ScavTrap scav(name);
+	
+	std::cout << "-----ClapTrap-----" << std::endl;
+	for(int i = 0; i < 2; i++)
+		clap.attack("orc");
+	clap.takeDamage(9);
+	clap.beRepaired(24);
+	clap.takeDamage(1);
+	clap.beRepaired(1);
+	std::cout << "-----ScavTrap-----" << std::endl;
+	for(int i = 0; i < 4; i++)
+		scav.attack("troll");
+	scav.takeDamage(11);
+	scav.beRepaired(45);
+	scav.takeDamage(1);
+	scav.beRepaired(1);
+	scav.guardGate();
+    return (0);
 }

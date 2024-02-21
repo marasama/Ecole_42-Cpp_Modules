@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                      :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-khni <ael-khni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 19:57:02 by ael-khni          #+#    #+#             */
-/*   Updated: 2022/07/24 11:41:50 by ael-khni         ###   ########.fr       */
+/*   Created: 2024/02/21 17:06:17 by adurusoy          #+#    #+#             */
+/*   Updated: 2024/02/21 18:22:46 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#ifndef SCAV_TRAP_HPP
+#define SCAV_TRAP_HPP
 
+#include <iostream>
 #include "ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap
 {
-private:
-    ScavTrap();
-
-public:
-    ScavTrap( std::string name );
-    ~ScavTrap();
-
-    void    attack(std::string const& target);
-    void    guardGate();
+	public:
+		ScavTrap();
+		ScavTrap(std::string name);
+		ScavTrap(const ScavTrap& otherScav);
+		~ScavTrap();
+		ScavTrap &operator=(const ScavTrap& otherScav);
+		void attack(std::string const& target);
+		void guardGate(void);
 };
 
-#endif // SCAVTRAP_HPP
+#endif
+
+
+

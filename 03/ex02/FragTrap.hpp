@@ -3,28 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-khni <ael-khni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 13:21:04 by ael-khni          #+#    #+#             */
-/*   Updated: 2022/07/24 13:26:56 by ael-khni         ###   ########.fr       */
+/*   Created: 2024/02/21 18:10:53 by adurusoy          #+#    #+#             */
+/*   Updated: 2024/02/21 18:30:09 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#ifndef FRAG_TRAP_HPP
+#define FRAG_TRAP_HPP
 
+#include <iostream>
 #include "ClapTrap.hpp"
 
 class FragTrap : public ClapTrap
 {
-private:
-    FragTrap();
-
-public:
-    FragTrap(std::string name);
-    ~FragTrap();
-
-    void    highFive( void );
+	public:
+		FragTrap();
+		FragTrap(std::string name);
+		FragTrap(const FragTrap& otherFrag);
+		~FragTrap();
+		FragTrap &operator=(const FragTrap& otherFrag);
+		void highFiveGuys(void);
 };
 
-#endif // FRAGTRAP_HPP
+#endif

@@ -3,32 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-khni <ael-khni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/22 12:58:30 by ael-khni          #+#    #+#             */
-/*   Updated: 2022/07/22 13:10:00 by ael-khni         ###   ########.fr       */
+/*   Created: 2024/02/21 06:07:40 by adurusoy          #+#    #+#             */
+/*   Updated: 2024/02/21 06:55:23 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
-#define FIXED_HPP
+# define FIXED_HPP
 
 #include <iostream>
 
 class Fixed
 {
 private:
-    int                 _fixedPointValue;
-    static const int    _fractionalBits = 8;
-
+	int _fixInt;
+	static const int _fracBits = 8;
 public:
-    Fixed(/* args */);
-    Fixed( const Fixed &rhs );
-    Fixed& operator=( const Fixed &rhs );
-    ~Fixed();
+	Fixed(void);
+	Fixed(const Fixed& newFixed);
+	Fixed &operator=(const Fixed& newFixed);
+	~Fixed(void);
 
-    int     getRawBits( void ) const;
-    void    setRawBits( int const raw );
+	int getRawBits(void) const;
+	void setRawBits(int const raw);
 };
 
-#endif  // FIXED_HPP
+
+#endif

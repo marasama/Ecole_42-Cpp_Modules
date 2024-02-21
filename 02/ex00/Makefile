@@ -3,57 +3,33 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ael-khni <ael-khni@student.1337.ma>        +#+  +:+       +#+         #
+#    By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/07/22 13:08:02 by ael-khni          #+#    #+#              #
-#    Updated: 2022/07/22 13:08:41 by ael-khni         ###   ########.fr        #
+#    Created: 2024/01/29 18:04:04 by adurusoy          #+#    #+#              #
+#    Updated: 2024/02/21 06:28:49 by adurusoy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= Fixed
-	
-CC			= c++
-FLAGS		= -Wall -Wextra -Werror -std=c++98
-RM			= rm -rf
+NAME = fixed
+SRC = main.cpp Fixed.cpp
+CC = c++
+RM = rm -rf
+CCFLAGS = -Wall -Wextra -Werror -std=c++98
 
-OBJDIR = .objFiles
+all : $(NAME)
 
-FILES		= main Fixed
+$(NAME):
+	@$(CC) $(SRC) $(CCFLAGS) -o $(NAME)
+	@echo DONE...
 
-SRC			= $(FILES:=.cpp)
-OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
-HEADER		= Fixed.hpp 
+clean :
+	@$(RM) $(NAME)
+	@echo Clean
 
-#Colors:
-GREEN		=	\e[92;5;118m
-YELLOW		=	\e[93;5;226m
-GRAY		=	\e[33;2;37m
-RESET		=	\e[0m
-CURSIVE		=	\e[33;3m
+fclean:
+	@$(RM) $(NAME)
+	@echo "Full Clean"
 
-#Debug 
-ifeq ($(DEBUG), 1)
-   OPTS = -g
-endif
+re: fclean $(NAME)
 
 .PHONY: all clean fclean re
-
-all: $(NAME)
-
-$(NAME): $(OBJ) $(HEADER)
-	@$(CC) $(OBJ) $(OPTS) -o $(NAME)
-	@printf "$(_SUCCESS) $(GREEN)- Executable ready.\n$(RESET)"
-
-$(OBJDIR)/%.o: %.cpp $(HEADER)
-	@mkdir -p $(dir $@)
-	@$(CC) $(FLAGS) $(OPTS) -c $< -o $@
-
-clean:
-	@$(RM) $(OBJDIR) $(OBJ)
-	@printf "$(YELLOW)    - Object files removed.$(RESET)\n"
-
-fclean: clean
-	@$(RM) $(NAME)
-	@printf "$(YELLOW)    - Executable removed.$(RESET)\n"
-
-re: fclean all

@@ -3,41 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-khni <ael-khni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/22 12:58:30 by ael-khni          #+#    #+#             */
-/*   Updated: 2022/07/22 16:56:18 by ael-khni         ###   ########.fr       */
+/*   Created: 2024/02/21 06:07:40 by adurusoy          #+#    #+#             */
+/*   Updated: 2024/02/21 07:18:05 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
-#define FIXED_HPP
+# define FIXED_HPP
 
 #include <iostream>
 
 class Fixed
 {
-private:
-    int                 _fixedPointValue;
-    static const int    _fractionalBits = 8;
+	private:
+		int _fixInt;
+		static const int _fracBits = 8;
+	public:
+		Fixed(void);
+		Fixed(const Fixed& newFixed);
+		Fixed(const int raw);
+		Fixed(const float raw);
+		Fixed &operator=(const Fixed& newFixed);
+		~Fixed(void);
 
-public:
-    Fixed( void );
-    Fixed( const int n );
-    Fixed( const float n );
-    Fixed( const Fixed &rhs );
-    Fixed& operator=( const Fixed &rhs );
-    ~Fixed();
-
-    int     getRawBits( void ) const;
-    void    setRawBits( int const raw );
-
-    float   toFloat( void ) const;
-    int     toInt( void ) const;
-
+		float toFloat(void) const;
+		int toInt(void) const;
+		int getRawBits(void) const;
+		void setRawBits(int const raw);
 };
 
-std::ostream & operator<<( std::ostream & o, Fixed const & i );
+std::ostream &operator<<(std::ostream &out, Fixed const &i);
 
-
-#endif  // FIXED_HPP
+#endif

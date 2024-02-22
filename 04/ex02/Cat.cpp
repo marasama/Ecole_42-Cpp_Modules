@@ -3,48 +3,48 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-khni <ael-khni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 17:41:52 by ael-khni          #+#    #+#             */
-/*   Updated: 2022/07/25 14:49:40 by ael-khni         ###   ########.fr       */
+/*   Created: 2024/02/22 12:45:47 by adurusoy          #+#    #+#             */
+/*   Updated: 2024/02/22 17:15:48 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat( void ) : AAnimal("Cat") {
-    std::cout << this->_type << " constructor called" << std::endl;
-    try {
-        this->_brain = new Brain();
-    }
-    catch (const std::bad_alloc& e) {
-        std::cout << "Memory Allocation is failed : " << e.what() << std::endl;
-    }
+Cat::Cat() : AAnimal("Cat")
+{
+	this->type = "Cat";
+	std::cout << "|Cat: " << this->type << "| Default costructor called" << std::endl;
+	this->food = new Brain;
 }
 
-Cat::~Cat( void )
+Cat::Cat(const Cat& otherCat)
 {
-    std::cout << this->_type << " destructor called" << std::endl;
-    delete  this->_brain;
+	std::cout << "|Cat: " << this->type << "| Copy costructor called" << std::endl;
+	(*this) = otherCat;
 }
 
-void    Cat::makeSound( void ) const
+
+Cat &Cat::operator=(const Cat& otherCat)
 {
-    std::cout << "Meow!" << std::endl;
+	std::cout << "|Cat: " << this->type << "| Operator overload called" << std::endl;
+	this->type = otherCat.type;
+	for (int i = 0; i < 100; i++)
+	{
+		this->food->ideas[i] = otherCat.food->ideas[i];
+	}
+	return (*this);
 }
 
-Cat::Cat( const Cat& src )
+Cat::~Cat()
 {
-    *this = src;
+	delete this->food;
+	std::cout << "|Cat: " << this->type << "| Default destructor called" << std::endl;
 }
 
-Cat& Cat::operator=( const Cat& src )
+void Cat::makeSound(void) const
 {
-    std::cout << "<Cat.cpp:32> Cat copy called." << std::endl;
-    if (this != &src)
-    {
-        this->_type = src._type;
-        this->_brain = new Brain( *src._brain );
-    }
-    return *this;
+	std::cout << "|Cat: " << this->type << "| Meow meow" << std::endl;
 }
+

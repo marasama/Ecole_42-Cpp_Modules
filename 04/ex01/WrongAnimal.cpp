@@ -3,50 +3,56 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-khni <ael-khni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 20:15:04 by ael-khni          #+#    #+#             */
-/*   Updated: 2022/07/24 20:16:50 by ael-khni         ###   ########.fr       */
+/*   Created: 2024/02/22 13:24:38 by adurusoy          #+#    #+#             */
+/*   Updated: 2024/02/22 13:31:28 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal( void ) : _type( "WrongAnimel" ) {
-    std::cout << this->_type << " constructor called" << std::endl;
+WrongAnimal::WrongAnimal()
+{
+	this->type = "<none>";
+	std::cout << "|WrongAnimal: " << this->type << "| Default costructor called" << std::endl;
 }
 
-WrongAnimal::WrongAnimal( std::string type ) : _type( type )
+WrongAnimal::WrongAnimal(std::string WrongAnimalType)
 {
-    std::cout << "WrongAnimal " << this->_type << " constructor called" << std::endl;
+	std::cout << "|WrongAnimal: " << WrongAnimalType << "| Default costructor called" << std::endl;
+	this->type = WrongAnimalType;
 }
 
-WrongAnimal::~WrongAnimal( void )
+WrongAnimal::WrongAnimal(const WrongAnimal& otherWrongAnimal)
 {
-    std::cout << "WrongAnimal destructor called" << std::endl;
+	std::cout << "|WrongAnimal: " << this->type << "| Copy costructor called" << std::endl;
+	(*this) = otherWrongAnimal;
 }
 
-WrongAnimal::WrongAnimal( const WrongAnimal& src )
+WrongAnimal &WrongAnimal::operator=(const WrongAnimal& otherWrongAnimal)
 {
-    std::cout << "WrongAnimal copy constructor called" << std::endl;
-    *this = src;
+	std::cout << "|WrongAnimal: " << this->type << "| Operator overload called" << std::endl;
+	this->type = otherWrongAnimal.type;
+	return (*this);
 }
 
-WrongAnimal& WrongAnimal::operator=( const WrongAnimal& rhs )
+WrongAnimal::~WrongAnimal()
 {
-    std::cout << "WrongAnimal assignment operator called" << std::endl;
-    if ( this != &rhs ) {
-        this->_type = rhs._type;
-    }
-    return *this;
+	std::cout << "|WrongAnimal: " << this->type << "| Default destructor called" << std::endl;
 }
 
-void WrongAnimal::makeSound( void ) const
+void WrongAnimal::makeSound(void) const
 {
-    std::cout << "WrongAnimal makeSound called" << std::endl;
+	std::cout << "|WrongAnimal: " << this->type << "| making wrong animal sounds" << std::endl;
 }
 
-std::string    WrongAnimal::getType( void ) const
+std::string WrongAnimal::getType(void) const
 {
-    return this->_type;
+	return (this->type);
+}
+
+void WrongAnimal::setType(std::string newType)
+{
+	this->type = newType;
 }

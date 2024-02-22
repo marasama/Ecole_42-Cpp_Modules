@@ -3,27 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-khni <ael-khni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 17:41:37 by ael-khni          #+#    #+#             */
-/*   Updated: 2022/07/24 20:01:21 by ael-khni         ###   ########.fr       */
+/*   Created: 2024/02/22 12:54:15 by adurusoy          #+#    #+#             */
+/*   Updated: 2024/02/22 13:01:46 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOG_HPP
-# define DOG_HPP
+#define DOG_HPP
 
 #include "Animal.hpp"
+#include <iostream>
 
 class Dog : public Animal
 {
-private:
+	public:
+		Dog();
+		Dog(const Dog& otherDog);
+		Dog &operator=(const Dog& otherDog);
+		~Dog();
 
-public:
-    Dog( void );
-    ~Dog( void );
-
-    void   makeSound( void ) const;
+		void makeSound(void) const;
 };
 
-#endif // DOG_HPP
+
+#endif

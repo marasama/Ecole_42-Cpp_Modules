@@ -1,52 +1,59 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAnimal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-khni <ael-khni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 17:31:21 by ael-khni          #+#    #+#             */
-/*   Updated: 2022/07/25 11:42:55 by ael-khni         ###   ########.fr       */
+/*   Created: 2024/02/22 12:24:41 by adurusoy          #+#    #+#             */
+/*   Updated: 2024/02/22 17:05:56 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AAnimal.hpp"
 
-AAnimal::AAnimal( void ) : _type( "AAnimel" ) {
-    std::cout << this->_type << " constructor called" << std::endl;
+AAnimal::AAnimal()
+{
+	this->type = "<none>";
+	std::cout << "|Animal: " << this->type << "| Default costructor called" << std::endl;
 }
 
-AAnimal::AAnimal( std::string type ) : _type( type )
+AAnimal::AAnimal(std::string animalType)
 {
-    std::cout << "AAnimal " << this->_type << " constructor called" << std::endl;
+	std::cout << "|Animal: " << animalType << "| Default costructor called" << std::endl;
+	this->type = animalType;
 }
 
-AAnimal::~AAnimal( void )
+AAnimal::AAnimal(const AAnimal& otherAnimal)
 {
-    std::cout << "Animal destructor called" << std::endl;
+	std::cout << "|Animal: " << this->type << "| Copy costructor called" << std::endl;
+	(*this) = otherAnimal;
 }
 
-AAnimal::AAnimal( const AAnimal& src )
+
+AAnimal &AAnimal::operator=(const AAnimal& otherAnimal)
 {
-    std::cout << "AAnimal copy constructor called" << std::endl;
-    *this = src;
+	std::cout << "|Animal: " << this->type << "| Operator overload called" << std::endl;
+	this->type = otherAnimal.type;
+	return (*this);
 }
 
-AAnimal& AAnimal::operator=( const AAnimal& rhs )
+AAnimal::~AAnimal()
 {
-    std::cout << "<AAnimal.cpp:35: AAnimal assignment operator called" << std::endl;
-    if ( this != &rhs ) {
-        this->_type = rhs._type;
-    }
-    return *this;
+	std::cout << "|Animal: " << this->type << "| Default destructor called" << std::endl;
 }
 
-void AAnimal::makeSound( void ) const
+void AAnimal::makeSound(void) const
 {
-    std::cout << "AAnimal makeSound called" << std::endl;
+	std::cout << "|Animal: " << this->type << "| making sounds" << std::endl;
 }
 
-std::string    AAnimal::getType( void ) const
+std::string AAnimal::getType(void) const
 {
-    return this->_type;
+	return (this->type);
+}
+
+void AAnimal::setType(std::string newType)
+{
+	this->type = newType;
 }

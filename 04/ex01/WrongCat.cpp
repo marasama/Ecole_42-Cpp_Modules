@@ -1,28 +1,32 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ael-khni <ael-khni@student.1337.ma>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 20:18:24 by ael-khni          #+#    #+#             */
-/*   Updated: 2022/07/24 20:20:49 by ael-khni         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat( void ) : WrongAnimal("WrongCat")
+WrongCat::WrongCat() : WrongAnimal("WrongCat")
 {
-    std::cout << this->_type << " constructor called" << std::endl;
+	this->type = "WrongCat";
+	std::cout << "|WrongCat: " << this->type << "| Default costructor called" << std::endl;
 }
 
-WrongCat::~WrongCat( void )
+WrongCat::WrongCat(const WrongCat& otherWrongCat)
 {
-    std::cout << this->_type << " destructor called" << std::endl;
+	std::cout << "|WrongCat: " << this->type << "| Copy costructor called" << std::endl;
+	(*this) = otherWrongCat;
 }
 
-void    WrongCat::makeSound( void ) const
+
+WrongCat &WrongCat::operator=(const WrongCat& otherWrongCat)
 {
-    std::cout << "Meow!" << std::endl;
+	std::cout << "|WrongCat: " << this->type << "| Operator overload called" << std::endl;
+	this->type = otherWrongCat.type;
+	return (*this);
 }
+
+WrongCat::~WrongCat()
+{
+	std::cout << "|WrongCat: " << this->type << "| Default destructor called" << std::endl;
+}
+
+void WrongCat::makeSound(void) const
+{
+	std::cout << "|WrongCat: " << this->type << "| Meow meow" << std::endl;
+}
+

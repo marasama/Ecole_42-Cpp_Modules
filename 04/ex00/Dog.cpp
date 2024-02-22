@@ -3,26 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-khni <ael-khni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 17:41:27 by ael-khni          #+#    #+#             */
-/*   Updated: 2022/07/24 19:59:11 by ael-khni         ###   ########.fr       */
+/*   Created: 2024/02/22 12:53:56 by adurusoy          #+#    #+#             */
+/*   Updated: 2024/02/22 13:02:38 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog( void ) : Animal( "Dog" )
+Dog::Dog() : Animal("Dog")
 {
-    std::cout << this->_type << " constructor called" << std::endl;
+	this->type = "Dog";
+	std::cout << "|Dog: " << this->type << "| Default costructor called" << std::endl;
 }
 
-Dog::~Dog( void )
+Dog::Dog(const Dog& otherDog)
 {
-    std::cout << this->_type << " destructor called" << std::endl;
+	std::cout << "|Dog: " << this->type << "| Copy costructor called" << std::endl;
+	(*this) = otherDog;
 }
 
-void    Dog::makeSound( void ) const
+
+Dog &Dog::operator=(const Dog& otherDog)
 {
-    std::cout << "Woof!" << std::endl;
+	std::cout << "|Dog: " << this->type << "| Operator overload called" << std::endl;
+	this->type = otherDog.type;
+	return (*this);
+}
+
+Dog::~Dog()
+{
+	std::cout << "|Dog: " << this->type << "| Default destructor called" << std::endl;
+}
+
+void Dog::makeSound(void) const
+{
+	std::cout << "|Dog: " << this->type << "| Whaf whaf" << std::endl;
 }

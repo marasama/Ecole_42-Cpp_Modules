@@ -3,49 +3,47 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-khni <ael-khni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 17:41:27 by ael-khni          #+#    #+#             */
-/*   Updated: 2022/07/25 14:21:32 by ael-khni         ###   ########.fr       */
+/*   Created: 2024/02/22 12:53:56 by adurusoy          #+#    #+#             */
+/*   Updated: 2024/02/22 15:31:22 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog( void ) : Animal( "Dog" )
+Dog::Dog() : Animal("Dog")
 {
-    std::cout << this->_type << " constructor called" << std::endl;
-    try {
-        this->_brain = new Brain();
-    }
-    catch (const std::bad_alloc& e) {
-        std::cout << "Memory Allocation is failed : " << e.what() << std::endl;
-    }
+	this->type = "Dog";
+	std::cout << "|Dog: " << this->type << "| Default costructor called" << std::endl;
+	this->food = new Brain;
 }
 
-Dog::~Dog( void )
+Dog::Dog(const Dog& otherDog)
 {
-    delete  this->_brain;
-    std::cout << this->_type << " destructor called" << std::endl;
+	std::cout << "|Dog: " << this->type << "| Copy costructor called" << std::endl;
+	(*this) = otherDog;
 }
 
-void    Dog::makeSound( void ) const
+
+Dog &Dog::operator=(const Dog& otherDog)
 {
-    std::cout << "Woof!" << std::endl;
+	std::cout << "|Dog: " << this->type << "| Operator overload called" << std::endl;
+	this->type = otherDog.type;
+	for (int i = 0; i < 100; i++)
+	{
+		this->food->ideas[i] = otherDog.food->ideas[i];
+	}
+	return (*this);
 }
 
-Dog::Dog( const Dog& src )
+Dog::~Dog()
 {
-    *this = src;
+	delete this->food;
+	std::cout << "|Dog: " << this->type << "| Default destructor called" << std::endl;
 }
 
-Dog& Dog::operator=( const Dog& src )
+void Dog::makeSound(void) const
 {
-    std::cout << "<Dog.cpp:32> Dog copy called." << std::endl;
-    if (this != &src)
-    {
-        this->_type = src._type;
-        this->_brain = new Brain( *src._brain );
-    }
-    return *this;
+	std::cout << "|Dog: " << this->type << "| Whaf whaf" << std::endl;
 }

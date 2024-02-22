@@ -3,27 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-khni <ael-khni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 20:18:58 by ael-khni          #+#    #+#             */
-/*   Updated: 2022/07/24 20:19:36 by ael-khni         ###   ########.fr       */
+/*   Created: 2024/02/22 13:19:52 by adurusoy          #+#    #+#             */
+/*   Updated: 2024/02/22 13:26:53 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_HPP
-#define WRONGCAT_HPP
+#ifndef WRONG_CAT_HPP
+#define	WRONG_CAT_HPP
 
 #include "WrongAnimal.hpp"
+#include <iostream>
 
 class WrongCat : public WrongAnimal
 {
-private:
+	public:
+		WrongCat();
+		WrongCat(const WrongCat& otherWrongCat);
+		WrongCat &operator=(const WrongCat& otherWrongCat);
+		~WrongCat();
 
-public:
-    WrongCat( void );
-    ~WrongCat( void );
-
-    void   makeSound( void ) const;
+		void makeSound(void) const;
 };
 
-#endif // WRONGCAT_HPP
+#endif

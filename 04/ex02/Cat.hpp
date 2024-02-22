@@ -3,31 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-khni <ael-khni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 20:28:55 by ael-khni          #+#    #+#             */
-/*   Updated: 2022/07/25 14:46:59 by ael-khni         ###   ########.fr       */
+/*   Created: 2024/02/22 12:44:06 by adurusoy          #+#    #+#             */
+/*   Updated: 2024/02/22 17:15:42 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
-# define CAT_HPP
+#define CAT_HPP
 
 #include "AAnimal.hpp"
+#include "Brain.hpp"
+#include <iostream>
 
 class Cat : public AAnimal
 {
-private:
-    Brain   *_brain;
+	private:
+		Brain *food;
+	public:
+		Cat();
+		Cat(const Cat& otherCat);
+		Cat &operator=(const Cat& otherCat);
+		~Cat();
 
-public:
-    Cat( void );
-    ~Cat( void );
-
-    Cat( const Cat& src );
-    Cat& operator=( const Cat& src );
-
-    void   makeSound( void ) const;
+		void makeSound(void) const;
 };
 
-#endif // CAT_HPP
+
+#endif

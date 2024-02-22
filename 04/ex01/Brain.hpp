@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-khni <ael-khni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 21:11:40 by ael-khni          #+#    #+#             */
-/*   Updated: 2022/07/25 11:21:36 by ael-khni         ###   ########.fr       */
+/*   Created: 2024/02/22 13:36:23 by adurusoy          #+#    #+#             */
+/*   Updated: 2024/02/22 13:40:04 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@
 
 class Brain
 {
-private:
-    std::string _ideas[100];
+	public:
+		std::string ideas[100];
+		Brain();
+		Brain(const Brain& otherBrain);
+		~Brain();
 
-public:
-    Brain( void );
-    ~Brain( void );
-    Brain( const Brain& src );
-    Brain& operator=( const Brain& rhs );
+		Brain &operator=(const Brain& otherBrain);
 };
- 
-#endif // BRAIN_HPP
+
+
+#endif

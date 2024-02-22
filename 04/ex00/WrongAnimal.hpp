@@ -3,33 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-khni <ael-khni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 20:17:06 by ael-khni          #+#    #+#             */
-/*   Updated: 2022/07/24 20:20:06 by ael-khni         ###   ########.fr       */
+/*   Created: 2024/02/22 13:22:50 by adurusoy          #+#    #+#             */
+/*   Updated: 2024/02/22 13:46:21 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#ifndef WRONGANIMAL_HPP
-#define WRONGANIMAL_HPP
 
 #include <iostream>
 
 class WrongAnimal
 {
-protected:
-    std::string _type;
+	protected:
+		std::string type;
+	public:
+		WrongAnimal();
+		WrongAnimal(std::string animalType);
+		WrongAnimal(const WrongAnimal& otherAnimal);
+		WrongAnimal &operator=(const WrongAnimal& otherAnimal);
+		virtual ~WrongAnimal();
 
-public:
-    WrongAnimal( void );
-    WrongAnimal( std::string type );
-    ~WrongAnimal( void );
-
-    WrongAnimal( const WrongAnimal& src );
-    WrongAnimal& operator=( const WrongAnimal& rhs );
-
-    void            makeSound( void ) const;
-    std::string     getType( void ) const; 
+		void makeSound(void) const;
+		std::string getType(void) const;
+		void setType(std::string newType);
 };
-
-#endif // WRONGANIMAL_HPP

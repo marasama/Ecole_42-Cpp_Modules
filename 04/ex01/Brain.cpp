@@ -3,37 +3,44 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-khni <ael-khni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 21:12:36 by ael-khni          #+#    #+#             */
-/*   Updated: 2022/07/25 14:20:25 by ael-khni         ###   ########.fr       */
+/*   Created: 2024/02/22 13:40:09 by adurusoy          #+#    #+#             */
+/*   Updated: 2024/02/22 15:30:06 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
 
-Brain::Brain( void )
+Brain::Brain()
 {
-    std::cout << "Brain created." << std::endl;
+	std::cout << "Brain: Constructor called" << std::endl;
+	for (int i = 0; i < 100; i++)
+	{
+		if (i % 2 == 0)
+			this->ideas[i] = "Different Idea";
+		else
+			this->ideas[i] = "Another Different Idea";
+	}
 }
 
-Brain::~Brain( void )
+Brain::Brain(const Brain& otherBrain)
 {
-    std::cout << "Brain destroyed." << std::endl;
+	std::cout << "Brain: Copy constructor called" << std::endl;
+	*this = otherBrain;
 }
 
-Brain::Brain( const Brain& src )
+Brain &Brain::operator=(const Brain& otherBrain)
 {
-    *this = src;
+	std::cout << "Brain: Operator overload called" << std::endl;
+	for (int i = 0; i < 100; i++)
+	{
+		this->ideas[i] = otherBrain.ideas[i];
+	}
+	return (*this);
 }
 
-Brain& Brain::operator=( const Brain& src )
+Brain::~Brain()
 {
-    std::cout << "<Brain.cpp:32> Brain copy called." << std::endl;
-    if ( this != &src ) {
-        for ( int i = 0; i < 100; i++ ) {
-            this->_ideas[i] = src._ideas[i];
-        }
-    }
-    return *this;
+	std::cout << "Brain: Destructor called" << std::endl;
 }

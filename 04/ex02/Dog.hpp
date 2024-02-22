@@ -3,31 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-khni <ael-khni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 17:41:37 by ael-khni          #+#    #+#             */
-/*   Updated: 2022/07/25 14:47:13 by ael-khni         ###   ########.fr       */
+/*   Created: 2024/02/22 12:54:15 by adurusoy          #+#    #+#             */
+/*   Updated: 2024/02/22 17:13:35 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOG_HPP
-# define DOG_HPP
+#define DOG_HPP
 
 #include "AAnimal.hpp"
+#include "Brain.hpp"
+#include <iostream>
 
 class Dog : public AAnimal
 {
-private:
-    Brain   *_brain;
+	private:
+		Brain *food;
+	public:
+		Dog();
+		Dog(const Dog& otherDog);
+		Dog &operator=(const Dog& otherDog);
+		~Dog();
 
-public:
-    Dog( void );
-    ~Dog( void );
-
-    Dog( const Dog& src );
-    Dog& operator=( const Dog& src );
-
-    void   makeSound( void ) const;
+		void makeSound(void) const;
 };
 
-#endif // DOG_HPP
+
+#endif

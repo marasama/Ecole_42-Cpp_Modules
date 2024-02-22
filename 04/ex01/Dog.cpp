@@ -6,7 +6,7 @@
 /*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 12:53:56 by adurusoy          #+#    #+#             */
-/*   Updated: 2024/02/22 15:31:22 by adurusoy         ###   ########.fr       */
+/*   Updated: 2024/02/22 18:04:07 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ Dog::Dog() : Animal("Dog")
 Dog::Dog(const Dog& otherDog)
 {
 	std::cout << "|Dog: " << this->type << "| Copy costructor called" << std::endl;
+	this->food = new Brain(*(otherDog.food));
 	(*this) = otherDog;
 }
 

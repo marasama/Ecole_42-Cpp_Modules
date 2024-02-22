@@ -6,7 +6,7 @@
 /*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 12:45:47 by adurusoy          #+#    #+#             */
-/*   Updated: 2024/02/22 15:31:33 by adurusoy         ###   ########.fr       */
+/*   Updated: 2024/02/22 18:04:15 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ Cat::Cat() : Animal("Cat")
 Cat::Cat(const Cat& otherCat)
 {
 	std::cout << "|Cat: " << this->type << "| Copy costructor called" << std::endl;
+	this->food = new Brain(*(otherCat.food));
 	(*this) = otherCat;
 }
 

@@ -6,7 +6,7 @@
 /*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 13:06:31 by adurusoy          #+#    #+#             */
-/*   Updated: 2024/02/21 18:45:38 by adurusoy         ###   ########.fr       */
+/*   Updated: 2024/02/21 18:54:23 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ int main()
 {
 	std::string name;
 
-	std::cout << "Please enter for Clap: ";
+	std::cout << "Please enter name for Clap: ";
 	std::cin >> name;
 	ClapTrap clap(name);
 
-	std::cout << "Please enter for Scav: ";
+	std::cout << "Please enter name for Scav: ";
 	std::cin >> name;
 	ScavTrap scav(name);
-	
+
 	std::cout << "-----ClapTrap-----" << std::endl;
 	for(int i = 0; i < 2; i++)
 		clap.attack("orc");

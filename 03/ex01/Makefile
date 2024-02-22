@@ -6,11 +6,11 @@
 #    By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/29 18:04:04 by adurusoy          #+#    #+#              #
-#    Updated: 2024/02/21 17:05:39 by adurusoy         ###   ########.fr        #
+#    Updated: 2024/02/21 18:53:44 by adurusoy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = claptrap
+NAME = scavtrap
 SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
 CC = c++
 RM = rm -rf

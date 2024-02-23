@@ -6,7 +6,7 @@
 /*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 12:53:56 by adurusoy          #+#    #+#             */
-/*   Updated: 2024/02/22 18:03:42 by adurusoy         ###   ########.fr       */
+/*   Updated: 2024/02/23 00:15:53 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 Dog::Dog() : AAnimal("Dog")
 {
-	this->type = "Dog";
 	std::cout << "|Dog: " << this->type << "| Default costructor called" << std::endl;
 	this->food = new Brain;
 }

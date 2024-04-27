@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adurusoy <adurusoy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: adurusoy <adurusoy@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 12:35:42 by adurusoy          #+#    #+#             */
-/*   Updated: 2024/02/22 17:27:14 by adurusoy         ###   ########.fr       */
+/*   Updated: 2024/04/27 06:16:28 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main()
 		Cat* i = new Cat();
 		std::cout << j->getType() << " " << std::endl;
 		std::cout << i->getType() << " " << std::endl;
-		i->makeSound(); //will output the cat sound!
+		i->makeSound();
 		j->makeSound();
 		delete i;
 		delete j;

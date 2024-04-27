@@ -6,12 +6,12 @@
 #    By: adurusoy <adurusoy@student.42kocaeli.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/29 18:04:04 by adurusoy          #+#    #+#              #
-#    Updated: 2024/04/26 23:08:19 by adurusoy         ###   ########.fr        #
+#    Updated: 2024/04/27 06:42:42 by adurusoy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = animals
-SRC = 
+NAME = magic
+SRC = AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp main.cpp
 CC = c++
 RM = rm -rf
 CCFLAGS = -Wall -Wextra -Werror -std=c++98

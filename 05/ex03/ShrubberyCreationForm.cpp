@@ -5,25 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: adurusoy <adurusoy@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/29 19:07:01 by adurusoy          #+#    #+#             */
-/*   Updated: 2024/08/29 19:07:01 by adurusoy         ###   ########.fr       */
+/*   Created: 2024/08/29 19:04:31 by adurusoy          #+#    #+#             */
+/*   Updated: 2024/08/29 23:43:41 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
 // Constructors
-ShrubberyCreationForm::ShrubberyCreationForm(): Form("ShrubberyCreationForm", 145, 137), _target("default")
+ShrubberyCreationForm::ShrubberyCreationForm(): AForm("ShrubberyCreationForm", 145, 137), _target("default")
 {
 	std::cout << "ShrubberyCreationForm Default Constructor called" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target): Form("ShrubberyCreationForm", 145, 137), _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target): AForm("ShrubberyCreationForm", 145, 137), _target(target)
 {
 	std::cout << "ShrubberyCreationForm Constructor for target " << this->getTarget() << " called" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm &src): Form("ShrubberyCreationForm", 145, 137), _target(src.getTarget())
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm &src): AForm("ShrubberyCreationForm", 145, 137), _target(src.getTarget())
 {
 	std::cout << "ShrubberyCreationForm Copy Constructor called to copy " << src.getName() <<
 	" into " << this->getName() << std::endl;
@@ -51,11 +51,12 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 void	ShrubberyCreationForm::execute(Bureaucrat const &executor)const
 {
 	if ((int)executor.getGrade() > this->getExecGrade())
-		throw (Form::GradeTooLowException());
+		throw (Bureaucrat::GradeTooLowException());
 	else if (this->getIsSignedBool() == false)
-		throw (Form::FormNotSignedException());
+		throw (AForm::FormNotSignedException());
 	else
 	{
+		std::cout << executor.getName() << " has executed " << this->getName() << std::endl;
 		std::ofstream outfile (this->getTarget().append("_shrubbery").c_str());
 
 		for (int i = 0; i < 5; i++)
@@ -102,3 +103,4 @@ std::ostream	&operator<<(std::ostream &o, ShrubberyCreationForm *a)
 	std::endl;
 	return (o);
 }
+

@@ -6,7 +6,7 @@
 /*   By: adurusoy <adurusoy@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 19:01:47 by adurusoy          #+#    #+#             */
-/*   Updated: 2024/08/29 19:01:48 by adurusoy         ###   ########.fr       */
+/*   Updated: 2024/08/29 22:35:42 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 // Includes
 #include <string>
 #include <iostream>
-#include "Form.hpp"
+#include "AForm.hpp"
 
 // classes
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -47,8 +47,8 @@ class Bureaucrat
 	// Public Methods
 		void incrementGrade(void);
 		void decrementGrade(void);
-		void signForm(Form &form);
-		void executeForm(Form &form)const;
+		void signForm(AForm &form);
+		void executeForm(AForm &form)const;
 	// Getter
 		const std::string getName(void)const;
 		size_t getGrade(void)const;

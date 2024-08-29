@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: adurusoy <adurusoy@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/29 19:06:40 by adurusoy          #+#    #+#             */
-/*   Updated: 2024/08/29 19:06:41 by adurusoy         ###   ########.fr       */
+/*   Created: 2024/08/29 19:03:54 by adurusoy          #+#    #+#             */
+/*   Updated: 2024/08/29 22:31:40 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@
 #include <string>
 #include <iostream>
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 // classes
 
 class Bureaucrat;
 
-class From;
+class AFrom;
 
-class PresidentialPardonForm: public Form
+class PresidentialPardonForm: public AForm
 {
 	private:
 		const std::string _target;

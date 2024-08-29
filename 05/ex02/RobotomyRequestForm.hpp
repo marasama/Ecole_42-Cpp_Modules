@@ -6,7 +6,7 @@
 /*   By: adurusoy <adurusoy@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 19:04:15 by adurusoy          #+#    #+#             */
-/*   Updated: 2024/08/29 19:04:18 by adurusoy         ###   ########.fr       */
+/*   Updated: 2024/08/29 22:33:02 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@
 #include <iostream>
 #include <cstdlib>
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 // classes
 
 class Bureaucrat;
 
-class From;
+class AFrom;
 
-class RobotomyRequestForm: public Form
+class RobotomyRequestForm: public AForm
 {
 	private:
 		const std::string _target;

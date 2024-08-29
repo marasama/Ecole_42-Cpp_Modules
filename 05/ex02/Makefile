@@ -1,6 +1,6 @@
 
 NAME = politics
-SRC = main.cpp Bureaucrat.cpp Form.cpp	ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp	ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 CC = c++
 RM = rm -rf
 CCFLAGS = -Wall -Wextra -Werror -std=c++98

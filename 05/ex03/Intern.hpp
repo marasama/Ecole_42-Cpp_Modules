@@ -6,10 +6,9 @@
 /*   By: adurusoy <adurusoy@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 19:06:20 by adurusoy          #+#    #+#             */
-/*   Updated: 2024/08/29 19:06:21 by adurusoy         ###   ########.fr       */
+/*   Updated: 2024/08/29 23:45:11 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 // Header-protection
 #pragma once
@@ -17,7 +16,7 @@
 // Includes
 #include <string>
 #include <iostream>
-#include "Form.hpp"
+#include "AForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
@@ -46,7 +45,7 @@ class Intern
 		Intern &operator=(const Intern &src);
 
 	// Public Methods
-		Form *makeForm(const std::string form, const std::string target);
+		AForm *makeForm(const std::string form, const std::string target);
 	// Getter
 
 	// Setter

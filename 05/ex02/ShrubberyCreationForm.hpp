@@ -6,7 +6,7 @@
 /*   By: adurusoy <adurusoy@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 19:04:37 by adurusoy          #+#    #+#             */
-/*   Updated: 2024/08/29 19:04:38 by adurusoy         ###   ########.fr       */
+/*   Updated: 2024/08/29 22:34:05 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@
 #include <iostream>
 #include <fstream>
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 // classes
 
 class Bureaucrat;
 
-class From;
+class AFrom;
 
-class ShrubberyCreationForm: public Form
+class ShrubberyCreationForm: public AForm
 {
 	private:
 		const std::string _target;

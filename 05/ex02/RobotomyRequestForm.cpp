@@ -6,24 +6,24 @@
 /*   By: adurusoy <adurusoy@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 19:04:06 by adurusoy          #+#    #+#             */
-/*   Updated: 2024/08/29 19:04:06 by adurusoy         ###   ########.fr       */
+/*   Updated: 2024/08/29 23:41:26 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
 // Constructors
-RobotomyRequestForm::RobotomyRequestForm(): Form("RobotomyRequestForm", 72, 45), _target("default")
+RobotomyRequestForm::RobotomyRequestForm(): AForm("RobotomyRequestForm", 72, 45), _target("default")
 {
 	std::cout << "RobotomyRequestForm Default Constructor called" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target): Form("RobotomyRequestForm", 72, 45), _target(target)
+RobotomyRequestForm::RobotomyRequestForm(std::string target): AForm("RobotomyRequestForm", 72, 45), _target(target)
 {
 	std::cout << "RobotomyRequestForm Constructor for target " << this->getTarget() << " called" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm &src): Form("RobotomyRequestForm", 72, 45), _target(src.getTarget())
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm &src): AForm("RobotomyRequestForm", 72, 45), _target(src.getTarget())
 {
 	std::cout << "RobotomyRequestForm Copy Constructor called to copy " << src.getName() <<
 	" into " << this->getName() << std::endl;
@@ -55,11 +55,17 @@ void	RobotomyRequestForm::execute(Bureaucrat const &executor)const
 	if ((int)executor.getGrade() > this->getExecGrade())
 		throw (Bureaucrat::GradeTooLowException());
 	else if (this->getIsSignedBool() == false)
-		throw (Form::FormNotSignedException());
+		throw (AForm::FormNotSignedException());
 	else if (robot_fail++ % 2)
+	{
+		std::cout << executor.getName() << " has executed " << this->getName() << std::endl;
 		std::cout << "BRRRRRRRRRRRRRR\n" << this->getTarget() << " has been robotomized" << std::endl;
+	}
 	else
+	{
+		std::cout << executor.getName() << " has executed " << this->getName() << std::endl;
 		std::cout << "Robotomy failed" << std::endl;
+	}	
 }
 
 // Getter

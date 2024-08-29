@@ -5,25 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: adurusoy <adurusoy@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/29 19:06:35 by adurusoy          #+#    #+#             */
-/*   Updated: 2024/08/29 19:06:36 by adurusoy         ###   ########.fr       */
+/*   Created: 2024/08/29 19:03:44 by adurusoy          #+#    #+#             */
+/*   Updated: 2024/08/29 23:42:35 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
 // Constructors
-PresidentialPardonForm::PresidentialPardonForm(): Form("PresidentialPardonForm", 25, 5), _target("default")
+PresidentialPardonForm::PresidentialPardonForm(): AForm("PresidentialPardonForm", 25, 5), _target("default")
 {
 	std::cout << "PresidentialPardonForm Default Constructor called" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target): Form("PresidentialPardonForm", 25, 5), _target(target)
+PresidentialPardonForm::PresidentialPardonForm(std::string target): AForm("PresidentialPardonForm", 25, 5), _target(target)
 {
 	std::cout << "PresidentialPardonForm Constructor for target " << this->getTarget() << " called" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm &src): Form("PresidentialPardonForm", 25, 5), _target(src.getTarget())
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm &src): AForm("PresidentialPardonForm", 25, 5), _target(src.getTarget())
 {
 	std::cout << "PresidentialPardonForm Copy Constructor called to copy " << src.getName() <<
 	" into " << this->getName() << std::endl;
@@ -53,9 +53,12 @@ void	PresidentialPardonForm::execute(Bureaucrat const &executor)const
 	if ((int)executor.getGrade() > this->getExecGrade())
 		throw (Bureaucrat::GradeTooLowException());
 	else if (this->getIsSignedBool() == false)
-		throw (Form::FormNotSignedException());
+		throw (AForm::FormNotSignedException());
 	else
+	{
+		std::cout << executor.getName() << " has executed " << this->getName() << std::endl;
 		std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox" << std::endl;
+	}
 }
 
 // Getter

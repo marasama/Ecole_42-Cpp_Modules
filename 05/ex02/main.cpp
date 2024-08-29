@@ -6,12 +6,12 @@
 /*   By: adurusoy <adurusoy@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 19:03:34 by adurusoy          #+#    #+#             */
-/*   Updated: 2024/08/29 19:03:35 by adurusoy         ###   ########.fr       */
+/*   Updated: 2024/08/29 22:34:23 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
@@ -21,7 +21,7 @@ int main(void)
 	{
 		std::cout << "\033[34mConstructing\033[0m" << std::endl;
 		Bureaucrat *a = new Bureaucrat();
-		Form *b = new PresidentialPardonForm("default");
+		AForm *b = new PresidentialPardonForm("default");
 		// Form *c = new RobotomyRequestForm();
 		// Form *d = new ShrubberyCreationForm();
 		std::cout << std::endl;
@@ -55,7 +55,7 @@ int main(void)
 		std::cout << "\033[34mConstructing\033[0m" << std::endl;
 		Bureaucrat *a = new Bureaucrat("Assistant", 145);
 		Bureaucrat *b = new Bureaucrat("CEO", 1);
-		Form *c = new PresidentialPardonForm("some dude");
+		AForm *c = new PresidentialPardonForm("some dude");
 		// Form *d = new Form(*c);
 		// Form *d = new Form("Rent Contract", 140, 100); // you are not able to construct an abstract class here
 		std::cout << std::endl;
@@ -71,7 +71,7 @@ int main(void)
 		{
 			c->execute(*b);
 		}
-		catch (Form::FormNotSignedException &e)
+		catch (AForm::FormNotSignedException &e)
 		{
 			std::cerr << "\033[33m" << a->getName() << " was not able to execute the Form " << c->getName() << ": " << e.what() << "\033[0m" << std::endl;
 		}

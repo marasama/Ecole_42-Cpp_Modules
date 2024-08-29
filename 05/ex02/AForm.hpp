@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adurusoy <adurusoy@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/29 19:05:20 by adurusoy          #+#    #+#             */
-/*   Updated: 2024/08/29 19:05:20 by adurusoy         ###   ########.fr       */
+/*   Created: 2024/08/29 19:02:10 by adurusoy          #+#    #+#             */
+/*   Updated: 2024/08/29 22:35:43 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,29 +22,29 @@
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
-	protected:
+	private:
 		const std::string _name;
 		bool _is_signed;
 		const int _sign_grade;
 		const int _exec_grade;
 
-		// Constructors
-		Form(void);
-		Form(int sign_grade, int exec_grade);
-		Form(const std::string name);
-		Form(const std::string name, int sign_grade, int exec_grade);
-
 	public:
+
+		// Constructors
+		AForm(int sign_grade, int exec_grade);
+		AForm(void);
+		AForm(const std::string name, int sign_grade, int exec_grade);
+		AForm(const std::string name);
 	// Copy Constructor
-		Form(const Form &src);
+		AForm(const AForm &src);
 
 	// Deconstructors
-		virtual ~Form();
+		virtual ~AForm();
 
 	// Overloaded Operators
-		Form &operator=(const Form &src);
+		AForm &operator=(const AForm &src);
 	//Exceptions
 	class GradeTooLowException : public std::exception
 	{
@@ -76,4 +76,4 @@ class Form
 };
 
 // ostream Overload
-std::ostream	&operator<<(std::ostream &o, Form *a);
+std::ostream	&operator<<(std::ostream &o, AForm *a);

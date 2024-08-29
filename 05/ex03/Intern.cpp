@@ -6,7 +6,7 @@
 /*   By: adurusoy <adurusoy@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 19:06:05 by adurusoy          #+#    #+#             */
-/*   Updated: 2024/08/29 19:06:06 by adurusoy         ###   ########.fr       */
+/*   Updated: 2024/08/29 23:45:22 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,25 +43,25 @@ Intern &Intern::operator=(const Intern &src)
 }
 
 // static functions for makeForm
-static Form	*makePresident(const std::string target)
+static AForm	*makePresident(const std::string target)
 {
 	return (new PresidentialPardonForm(target));
 }
 
-static Form	*makeRobot(const std::string target)
+static AForm	*makeRobot(const std::string target)
 {
 	return (new RobotomyRequestForm(target));
 }
 
-static Form	*makeShrubbery(const std::string target)
+static AForm	*makeShrubbery(const std::string target)
 {
 	return (new ShrubberyCreationForm(target));
 }
 
 // Public Methods
-Form	*Intern::makeForm(const std::string form_to_create, const std::string target_for_form)
+AForm	*Intern::makeForm(const std::string form_to_create, const std::string target_for_form)
 {
-	Form *(*all_forms[])(const std::string target) = {&makePresident, &makeRobot, &makeShrubbery};
+	AForm *(*all_forms[])(const std::string target) = {&makePresident, &makeRobot, &makeShrubbery};
 	std::string forms[] = {"PresidentialPardonForm", "RobotomyRequestForm", "ShrubberyCreationForm"};
 
 	for (int i = 0; i < 3; i++)

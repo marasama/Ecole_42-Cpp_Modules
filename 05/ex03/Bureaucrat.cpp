@@ -5,13 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: adurusoy <adurusoy@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/29 19:04:52 by adurusoy          #+#    #+#             */
-/*   Updated: 2024/08/29 19:04:53 by adurusoy         ###   ########.fr       */
+/*   Created: 2024/08/29 19:01:40 by adurusoy          #+#    #+#             */
+/*   Updated: 2024/08/29 22:28:31 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 // Here the try catch statements are used because it just makes sense
 
@@ -130,13 +130,16 @@ void	Bureaucrat::decrementGrade(void)
 	}
 }
 
-void	Bureaucrat::signForm(Form &form)
+void	Bureaucrat::signForm(AForm &form)
 {
 		form.beSigned(*this);
 }
 
-void	Bureaucrat::executeForm(Form &form)const
+void	Bureaucrat::executeForm(AForm &form)const
 {
+	// if ((int)this->getGrade() > form.getExecGrade())
+	// 	throw (Bureaucrat::GradeTooLowException());
+	// else
 		form.execute(*this);
 }
 

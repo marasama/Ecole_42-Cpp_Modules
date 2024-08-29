@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: adurusoy <adurusoy@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/01 09:42:50 by tblaase           #+#    #+#             */
-/*   Updated: 2024/08/22 15:42:09 by adurusoy         ###   ########.fr       */
+/*   Created: 2024/08/29 15:27:42 by adurusoy          #+#    #+#             */
+/*   Updated: 2024/08/29 15:27:46 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "Bureaucrat.hpp"
 
@@ -114,3 +115,4 @@ std::ostream	&operator<<(std::ostream &o, Bureaucrat *a)
 	o << "Bureaucrat " << a->getName() << ":\n\tgrade: " << a->getGrade() << std::endl;
 	return (o);
 }
+

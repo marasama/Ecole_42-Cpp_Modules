@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
+/*   By: adurusoy <adurusoy@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 15:28:09 by tblaase           #+#    #+#             */
-/*   Updated: 2022/04/11 17:09:19 by tblaase          ###   ########.fr       */
+/*   Created: 2024/08/29 19:04:06 by adurusoy          #+#    #+#             */
+/*   Updated: 2024/08/29 19:04:06 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	RobotomyRequestForm::execute(Bureaucrat const &executor)const
 	else if (this->getIsSignedBool() == false)
 		throw (Form::FormNotSignedException());
 	else if (robot_fail++ % 2)
-		std::cout << "BRRRRRRRRRRRRRR\n" << this->getTarget() << " was robotomized" << std::endl;
+		std::cout << "BRRRRRRRRRRRRRR\n" << this->getTarget() << " has been robotomized" << std::endl;
 	else
 		std::cout << "Robotomy failed" << std::endl;
 }

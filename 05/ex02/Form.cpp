@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
+/*   By: adurusoy <adurusoy@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/04 19:52:02 by tblaase           #+#    #+#             */
-/*   Updated: 2022/04/11 12:50:12 by tblaase          ###   ########.fr       */
+/*   Created: 2024/08/29 19:01:55 by adurusoy          #+#    #+#             */
+/*   Updated: 2024/08/29 19:01:58 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,11 +116,6 @@ int	Form::getSignGrade(void)const
 int	Form::getExecGrade(void)const
 {
 	return (this->_exec_grade);
-}
-
-void Form::execute(Bureaucrat const &executor)const
-{
-	(void)executor;
 }
 
 // Setter

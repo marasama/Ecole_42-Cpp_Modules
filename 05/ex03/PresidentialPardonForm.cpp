@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
+/*   By: adurusoy <adurusoy@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 15:28:00 by tblaase           #+#    #+#             */
-/*   Updated: 2022/04/11 17:09:06 by tblaase          ###   ########.fr       */
+/*   Created: 2024/08/29 19:06:35 by adurusoy          #+#    #+#             */
+/*   Updated: 2024/08/29 19:06:36 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

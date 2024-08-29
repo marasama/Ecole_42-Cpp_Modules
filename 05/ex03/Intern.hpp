@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
+/*   By: adurusoy <adurusoy@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/07 10:22:27 by tblaase           #+#    #+#             */
-/*   Updated: 2022/04/07 10:58:50 by tblaase          ###   ########.fr       */
+/*   Created: 2024/08/29 19:06:20 by adurusoy          #+#    #+#             */
+/*   Updated: 2024/08/29 19:06:21 by adurusoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 // Header-protection
 #pragma once

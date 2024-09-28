@@ -1,27 +1,40 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: adurusoy <adurusoy@student.42kocaeli.co    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/09/27 11:33:45 by adurusoy          #+#    #+#              #
+#    Updated: 2024/09/27 11:33:45 by adurusoy         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = Iter
 CC = c++
-CLAFGS = -Wall -Wextra -Werror -Wshadow -std=c++98
-SRCS = $(wildcard *.cpp)
+CFLAGS = -Wall -Wextra -Werror -std=c++98
+SRCS = main.cpp iter.hpp
 OBJ = $(SRCS:.cpp = .o)
 
 $(NAME): $(OBJ)
-	@$(CC) $(CLAFGS) $(SRCS) -o $(NAME)
-	@echo "\033[1;32m     [OK]\033[0m"
+	@$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
+	@figlet $(NAME) | lolcat
 
 all: $(NAME)
 
 clean:
-	@rm -rf  $(NAME) *.dSYM
-	@rm -rf *_shrubbery
-	@echo "\033[1;35m[🧹...Temizlendi...🧹]\033[0m"
+	@rm -f $(OBJS)
+	@rm -f $(NAME)
+	@figlet TEMIZLENDI | lolcat
 
 fclean: clean
 
-
 re: fclean all
 
-debug : 
-	$(CC) -g $(SRCS) -o $(NAME)
-	lldb $(NAME)
+debug:
+	@rm -f $(NAME)
+	@$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
+	@figlet DEBUGGING | lolcat
+	valgrind ./$(NAME)
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re debug

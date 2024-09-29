@@ -6,7 +6,7 @@
 #    By: adurusoy <adurusoy@student.42kocaeli.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/29 12:17:23 by adurusoy          #+#    #+#              #
-#    Updated: 2024/09/29 16:02:48 by adurusoy         ###   ########.fr        #
+#    Updated: 2024/09/29 18:02:07 by adurusoy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,8 @@ clean:
 	@figlet TEMIZLENDI | lolcat
 
 fclean: clean
+
+re: fclean all
 
 debug: all
 	@figlet DEBUGGING | lolcat

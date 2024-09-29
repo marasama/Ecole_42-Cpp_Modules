@@ -2,7 +2,7 @@
 
 int main()
 {
-    std::vector<int> vec(5);
+    std::vector<int> vec;
     vec.push_back(50);
     vec.push_back(20);
     vec.push_back(30);
@@ -11,7 +11,12 @@ int main()
     int result = easyfind(vec, 30);
     std::cout << "Element found at index: " << result << std::endl;  // Output: 2
 
-    std::list<int> lst = {100, 200, 300, 400};
+    std::vector<int> lst;
+    lst.push_back(500);
+    lst.push_back(200);
+    lst.push_back(300);
+    lst.push_back(200);
+    lst.push_back(100);
     result = easyfind(lst, 300);
     std::cout << "Element found at index: " << result << std::endl;  // Output: 2
 

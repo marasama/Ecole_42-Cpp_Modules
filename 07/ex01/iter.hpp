@@ -1,21 +1,16 @@
-#ifndef ITER_HPP
-#define ITER_HPP
-
 #include <iostream>
 
-template<typename TEMPLT>
-void iter(TEMPLT arr[], int size, void (* prnt_fnc)(TEMPLT &a))
+template<typename T>
+void iter(T array[], int size, void (* prnt_func)(const T &zort))
 {
-    for (int i = 0; i < size; i++)
-    {
-        prnt_fnc(arr[i]);
-    }
+	for (int i = 0; i < size; i++)
+	{
+		prnt_func(array[i]);
+	}
 }
 
-template<typename TEMPLT>
-void print_func(TEMPLT &a)
+template<typename T>
+void print_func(const T &zort)
 {
-    std::cout << a << std::endl;
+	std::cout << zort << std::endl;
 }
-
-#endif

@@ -10,11 +10,11 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Iter
+NAME = Array
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = main.cpp iter.hpp
-OBJ = $(SRCS:.cpp = .o)
+SRCS = main.cpp
+OBJ = $(SRCS:.cpp=.o)
 
 $(NAME): $(OBJ)
 	@$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
@@ -23,7 +23,7 @@ $(NAME): $(OBJ)
 all: $(NAME)
 
 clean:
-	@rm -f $(OBJS)
+	@rm -f $(OBJ)
 	@rm -f $(NAME)
 	@figlet TEMIZLENDI | lolcat
 
@@ -31,9 +31,7 @@ fclean: clean
 
 re: fclean all
 
-debug:
-	@rm -f $(NAME)
-	@$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
+debug: re
 	@figlet DEBUGGING | lolcat
 	valgrind ./$(NAME)
 

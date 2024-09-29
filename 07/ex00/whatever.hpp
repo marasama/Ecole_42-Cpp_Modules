@@ -1,31 +1,31 @@
-
 #ifndef WHATEVER_HPP
 #define WHATEVER_HPP
 
 #include <iostream>
 
-template <typename T>
+template<typename T>
 T min(T &first, T &second)
 {
-    if (first > second)
-        return (second);
-    return (first);
+	if (first >= second)
+		return (second);
+	return (first);
 }
 
-template <typename ZORT>
-ZORT max(ZORT &first, ZORT &second)
+template<typename T>
+T max(T &first, T &second)
 {
-    if (first < second)
-        return (second);
-    return (first);
+	if (first > second)
+		return (first);
+	return (second);
 }
 
-template <typename ZART>
-void swap(ZART &first, ZART &second)
+template<typename T>
+void swap(T &first, T &second)
 {
-    ZART tmp = first;
-    first = second;
-    second = tmp;
+	T tmp;
+	tmp = first;
+	first = second;
+	second = tmp;
 }
 
 #endif

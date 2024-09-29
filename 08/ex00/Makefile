@@ -6,7 +6,7 @@
 #    By: adurusoy <adurusoy@student.42kocaeli.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/29 12:17:23 by adurusoy          #+#    #+#              #
-#    Updated: 2024/09/29 12:23:02 by adurusoy         ###   ########.fr        #
+#    Updated: 2024/09/29 16:02:48 by adurusoy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = easyfind.hpp main.cpp
+SRCS = main.cpp
 
 OBJ = $(SRCS:.cpp=.o)
 

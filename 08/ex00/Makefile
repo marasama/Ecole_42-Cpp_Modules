@@ -6,7 +6,7 @@
 #    By: adurusoy <adurusoy@student.42kocaeli.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/29 12:17:23 by adurusoy          #+#    #+#              #
-#    Updated: 2024/09/29 18:02:07 by adurusoy         ###   ########.fr        #
+#    Updated: 2024/09/29 20:14:36 by adurusoy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,9 @@ $(NAME): $(OBJ)
 	@figlet $(NAME) | lolcat
 
 all: $(NAME)
+
+%.o: %.cpp
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	@rm -f $(OBJ)

@@ -1,0 +1,18 @@
+#include "BitcoinExchange.hpp"
+
+int main(int zart, char *zort[])
+{
+	if (zart != 2)
+	{
+		std::cout << "\033[1;35mError: could not open file.\033[0" << std::endl;
+		return (0);
+	}
+	try
+	{
+		BitcoinExchange<int> myClass(zort[1]);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "\033[1;35m" << e.what() << "\033[0"<< '\n';
+	}
+}

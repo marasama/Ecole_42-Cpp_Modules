@@ -9,7 +9,9 @@ int main(int zart, char *zort[])
 	}
 	try
 	{
-		BitcoinExchange<int> myClass(zort[1]);
+		BitcoinExchange myClass("data.csv");
+		myClass.storeData();
+		myClass.takeInputFile(zort[1]);
 	}
 	catch(const std::exception& e)
 	{

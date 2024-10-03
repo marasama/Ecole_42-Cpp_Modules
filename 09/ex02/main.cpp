@@ -1,24 +1,21 @@
 #include "PmergeMe.hpp"
+#include <stack>
 
 int main(int zart, char *zort[])
 {
-	std::vector<int> first;
+
+	if (zart < 3)
+	{
+		std::cout << "Error: there is not enough input" << std::endl;
+		return (0);
+	}
 	try
 	{
-		for (int i = 1; i < zart; i++)
-		{
-			std::stringstream ss(zort[i]);
-			int tmp;
-			if (ss >> tmp && tmp > 0)
-			{
-				first.push_back(tmp);
-			}
-			else
-			{
-				std::cout << "Error" << std::endl;
-				return (0);
-			}
-		}
+		PmergeMe<std::vector<int> > first(zart, zort);
+		PmergeMe<std::deque<int> > second(zart, zort);
+		first.printContainer(false);
+		first.startSorting("std::vector", true);
+		second.startSorting("std::deque", false);
 	}
 	catch(const std::exception& e)
 	{

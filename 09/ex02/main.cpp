@@ -1,5 +1,4 @@
 #include "PmergeMe.hpp"
-#include <stack>
 
 int main(int zart, char *zort[])
 {

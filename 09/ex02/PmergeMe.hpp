@@ -3,11 +3,10 @@
 #include <string>
 #include <iostream>
 #include <vector>
-#include <deque>
 #include <exception>
 #include <sstream>
-#include <iomanip> 
-#include <ctime>
+#include <deque>
+#include <sys/time.h>
 
 template<class C = std::vector<int> >
 class PmergeMe
@@ -38,19 +37,16 @@ class PmergeMe
 template<class C>
 void PmergeMe<C>::startSorting(const std::string &className, bool printCntner)
 {
-	std::clock_t startTime, endTime;
-	startTime = std::clock();
+	struct timeval startTime, endTime;
+	gettimeofday(&startTime, 0);
 	fordJohnson(0, container.size() - 1);
 	if (printCntner)
 		printContainer(true);
-	for (unsigned int i = 0; i < 333333333; i++);
-	std::delay()
-	endTime = std::clock();
-	std::cout << endTime << " | " << startTime << " | " << className << std::endl;
-	double elapsedSeconds = double(endTime - startTime) / CLOCKS_PER_SEC;
+	gettimeofday(&endTime, 0);
+	double timePased = ((double)endTime.tv_usec - (double)startTime.tv_usec) / 1000000;
 	std::cout << "Time to process a range of " << 
 	container.size() << " elements with " << 
-	className << "\t:" << std::fixed << std::setprecision(6) << elapsedSeconds << "seconds" << std::endl; 
+	className << "\t:" << timePased << " seconds" << std::endl; 
 }
 
 template<class C>

@@ -20,20 +20,20 @@
 
 class ScalarConverter
 {
-public:
-    ScalarConverter();
-    ~ScalarConverter();
-    ScalarConverter(const ScalarConverter &other);
-    ScalarConverter &operator=(const ScalarConverter &other);
+    public:
+        ScalarConverter();
+        ~ScalarConverter();
+        ScalarConverter(const ScalarConverter &other);
+        ScalarConverter &operator=(const ScalarConverter &other);
 
-    static void convert(std::string str);
+        static void convert(std::string str);
 
-    static void convertChar(char i);
-    static void convertInt(int i);
-    static void convertFloat(float i);
-    static void convertDouble(double i);
+        static void convertChar(char i);
+        static void convertInt(int i);
+        static void convertFloat(float i);
+        static void convertDouble(double i);
 
-    static void printFunc(char a, int b, float c, double d);
-    static void pseudoPrinter(std::string str);
-    static void impossiblePrinter();
+        static void printFunc(char a, int b, float c, double d);
+        static void pseudoPrinter(std::string str);
+        static void impossiblePrinter();
 };

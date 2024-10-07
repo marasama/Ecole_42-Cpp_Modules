@@ -12,6 +12,7 @@ class Base
         Base();
         Base(const Base &other);
         Base &operator=(const Base &other);
+
 };
 
 class A : public Base {};

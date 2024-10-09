@@ -24,6 +24,11 @@ ScalarConverter &ScalarConverter::operator=(const ScalarConverter &other)
 
 void ScalarConverter::convert(std::string str)
 {
+	if (str.length() == 1 && str[0] >= 32 && str[0] < 127)
+	{
+		printFunc(str[0], str[0], str[0], str[0]);
+		return;
+	}
     if (str == "-inff" || str == "+inff" || str == "nanf" || str == "-inf" || str == "+inf" || str == "nan")
     {
         pseudoPrinter(str);

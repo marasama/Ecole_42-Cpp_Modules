@@ -63,38 +63,16 @@ void ScalarConverter::convert(std::string str)
 
     try
     {
-        if (f_c == 1 && d_c == 1)
-            convertFloat(std::stof(str));
-        else if (f_c == 0 && d_c == 1)
-            convertDouble(std::stod(str));
-        else
-            convertInt(std::stoi(str));
+		std::stringstream ss(str);
+		double d;
+		if (!(ss >> d))
+			impossiblePrinter();
+		printFunc(static_cast<char>(d), static_cast<int>(d), static_cast<float>(d), d);
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
-}
-
-
-void ScalarConverter::convertChar(char i)
-{
-	printFunc(i,i,i,i);
-}
-
-void ScalarConverter::convertInt(int i)
-{
-	printFunc(i,i,i,i);
-}
-
-void ScalarConverter::convertFloat(float i)
-{
-	printFunc(i,i,i,i);
-}
-
-void ScalarConverter::convertDouble(double i)
-{
-	printFunc(i,i,i,i);
 }
 
 void ScalarConverter::pseudoPrinter(std::string str)

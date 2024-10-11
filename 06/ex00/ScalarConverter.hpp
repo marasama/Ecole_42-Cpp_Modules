@@ -15,6 +15,7 @@
 #include <string>
 #include <cctype>
 #include <iostream>
+#include <sstream>
 #include <cstdlib>
 #include <climits>
 

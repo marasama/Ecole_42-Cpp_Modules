@@ -1,8 +1,7 @@
+#include <iostream>
 #include "Array.hpp"
-#include <cstdlib>
 
 #define MAX_VAL 10
-
 int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
@@ -14,8 +13,11 @@ int main(int, char**)
         numbers[i] = value;
         mirror[i] = value;
     }
-	for (int i = 0; i < MAX_VAL; i++)
-		std::cout << numbers[i] << std::endl;
+
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        std::cout << numbers[i] << std::endl;
+    }
     //SCOPE
     {
         Array<int> tmp = numbers;
@@ -51,6 +53,11 @@ int main(int, char**)
     {
         numbers[i] = rand();
     }
-    delete [] mirror;
+
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        std::cout << numbers[i] << std::endl;
+    }
+    delete [] mirror;//
     return 0;
 }

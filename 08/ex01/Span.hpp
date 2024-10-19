@@ -1,8 +1,10 @@
+#pragma once
+
 #include <vector>
 #include <iostream>
 #include <iterator>
-#include <algorithm>
 #include <cstdlib>
+#include <algorithm>
 
 class Span
 {

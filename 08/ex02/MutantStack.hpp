@@ -17,24 +17,13 @@ class MutantStack : public std::stack<T, C>
 		MutantStack(const C& cont = C()) : std::stack<T, C>(cont) {}
 		MutantStack(const MutantStack &other) : std::stack<T, C>(other){}
 		// Assignment Operator
-		MutantStack &operator=(const MutantStack &other)
-		{
-			if (this != &other) 
-			{
-				std::stack<T, C>::operator=(other);
-			}
-			return (*this);
-		}
+		MutantStack &operator=(const MutantStack &other);
 
 		// Iterator Functions
-		iterator begin()
-		{
-			return this->c.begin();
-		}
-		iterator end()
-		{
-			return this->c.end();
-		}
+		iterator begin();
+		iterator end();
 };
+
+#include "MutantStack.tpp"
 
 #endif

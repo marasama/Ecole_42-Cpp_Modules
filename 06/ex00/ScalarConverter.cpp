@@ -66,7 +66,10 @@ void ScalarConverter::convert(std::string str)
 		std::stringstream ss(str);
 		double d;
 		if (!(ss >> d))
+		{
 			impossiblePrinter();
+			return;
+		}
 		printFunc(static_cast<char>(d), static_cast<int>(d), static_cast<float>(d), d);
     }
     catch(const std::exception& e)

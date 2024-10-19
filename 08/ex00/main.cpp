@@ -8,7 +8,7 @@ int main()
     vec.push_back(30);
     vec.push_back(40);
     vec.push_back(10);
-    int result = easyfind(vec, 30);
+    int result = easyfind(vec, 40);
     std::cout << "Element found at index: " << result << std::endl;  // Output: 2
 
     std::vector<int> lst;

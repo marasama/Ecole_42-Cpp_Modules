@@ -6,7 +6,7 @@
 #    By: adurusoy <adurusoy@student.42kocaeli.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/29 12:17:23 by adurusoy          #+#    #+#              #
-#    Updated: 2024/10/01 21:20:47 by adurusoy         ###   ########.fr        #
+#    Updated: 2024/10/20 18:39:39 by adurusoy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ OBJ = $(SRCS:.cpp=.o)
 
 $(NAME): $(OBJ)
 	@$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
-	@figlet $(NAME) | lolcat
+	@echo $(NAME)
 
 all: $(NAME)
 
@@ -31,15 +31,17 @@ all: $(NAME)
 
 clean:
 	@rm -f $(OBJ)
-	@rm -f $(NAME)
-	@figlet TEMIZLENDI | lolcat
+	@rm -f $(NAME)	
+	@echo TEMİZ
 
 fclean: clean
+	@rm -rf $(NAME).dSYM
+	@echo TERTEMİZ
 
 re: fclean all
 
 debug: all
-	@figlet DEBUGGING | lolcat
-	valgrind ./$(NAME)
+	@echo DEBUGGING
+	@valgrind ./$(NAME)
 
 .PHONY: all clean fclean re debug

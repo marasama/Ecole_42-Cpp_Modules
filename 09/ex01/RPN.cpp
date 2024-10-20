@@ -6,6 +6,20 @@ RPN::RPN(char *notation)
 	calculateNotation();
 }
 
+RPN::~RPN()
+{
+}
+
+RPN::RPN(const RPN &other) : _str(other._str)
+{
+}
+
+RPN &RPN::operator=(const RPN &other)
+{
+    _str = other._str;
+    return (*this);
+}
+
 void RPN::computeToken(std::stack<int> &operands, const std::string &token)
 {
     if (operands.size() < 2)

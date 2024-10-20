@@ -13,10 +13,10 @@ class RPN
 		std::string _str;
 	public:
 		RPN(char *notatiton);
-		RPN(const RPN &other): _str(other._str){};
+		RPN(const RPN &other);
 
-		RPN &operator=(const RPN &other){_str = other._str;return (*this);}
-		~RPN(){};
+		RPN &operator=(const RPN &other);
+		~RPN();
 
 		void computeToken(std::stack<int> &operands, const std::string &token);
 		void calculateNotation();

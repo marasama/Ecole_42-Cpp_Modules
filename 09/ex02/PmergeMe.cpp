@@ -3,15 +3,15 @@
 template <typename T, class C>
 void PmergeMe<T, C>::startSorting(const std::string &className, bool printCntner)
 {
-	struct timeval endTime;
 	fordJohnson(0, container.size() - 1);
 	if (printCntner)
 		printContainer(true);
-	gettimeofday(&endTime, 0);
-	double timePased = ((double)endTime.tv_usec - (double)start.tv_usec) / 1000000;
+	std::clock_t endTime = std::clock();
+    double timePassed = double(endTime - _start) / CLOCKS_PER_SEC * 1000.0;
+	std::cout << std::fixed << std::setprecision(5);
 	std::cout << "Time to process a range of " << 
 	container.size() << " elements with " << 
-	className << "\t:" << timePased << " seconds" << std::endl; 
+	className << "\t: " << timePassed << " ms" << std::endl; 
 }
 
 template <typename T, class C>
@@ -97,8 +97,7 @@ void PmergeMe<T, C>::printContainer(bool sorted)
 template <typename T, class C>
 PmergeMe<T, C>::PmergeMe(int size, char *argv[])
 {
-
-	gettimeofday(&this->start, 0);
+	_start = std::clock();
 	for (int i = 1; i < size; i++)
 	{
 		std::stringstream ss(argv[i]);
@@ -121,7 +120,7 @@ PmergeMe<T, C>::PmergeMe(const PmergeMe &other)
 template <typename T, class C>
 PmergeMe<T, C> &PmergeMe<T, C>::operator=(const PmergeMe<T, C> &other)
 {
-	if (this == &other)
+	if (this->container == other.container)
 		return *this;
 		this->container = other.container;
 	return *this;

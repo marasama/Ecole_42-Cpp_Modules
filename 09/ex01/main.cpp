@@ -4,7 +4,7 @@ int main(int zart, char *zort[])
 {
 	if (zart != 2)
 	{
-		std::cout << "Error: Bad input." << std::endl;
+		std::cerr << "Error: Bad input." << std::endl;
 		return (1);
 	}
 

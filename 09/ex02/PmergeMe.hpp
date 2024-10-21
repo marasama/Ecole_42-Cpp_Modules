@@ -7,13 +7,14 @@
 #include <sstream>
 #include <vector>
 #include <deque>
-#include <sys/time.h>
+#include <ctime>
+#include <iomanip>
 
 template <typename T, class C = std::vector<T> >
 class PmergeMe
 {
 	private:
-		struct timeval start;
+		std::clock_t _start;
 		C container;
 	public:
 		PmergeMe(int size, char *argv[]);
